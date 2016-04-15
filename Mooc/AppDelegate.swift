@@ -7,18 +7,37 @@
 //
 
 import UIKit
+import TVMLKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,TVApplicationControllerDelegate {
 
     var window: UIWindow?
 
-
+    var controller:TVApplicationController?
+    let javascriptTools = JavascriptTools()
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let appControllerContext = TVApplicationControllerContext()
+        let jsURL = NSBundle.mainBundle().URLForResource("Application", withExtension: "js")
+        let baseURL = NSBundle.mainBundle().URLForResource("images", withExtension: "")
+        appControllerContext.javaScriptApplicationURL = jsURL!
+        appControllerContext.launchOptions["BASEURL"] = baseURL?.absoluteString
+        
+        if let launchOptions = launchOptions as? [String: AnyObject] {
+            for (kind, value) in launchOptions {
+                appControllerContext.launchOptions[kind] = value
+            }
+        }
+        
+        controller = TVApplicationController(context: appControllerContext, window: window, delegate: self)
         return true
     }
 
+    func appController(appController: TVApplicationController, evaluateAppJavaScriptInContext jsContext: JSContext) {
+        jsContext.setObject(javascriptTools, forKeyedSubscript: "javascriptTools")
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

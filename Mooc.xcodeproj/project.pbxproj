@@ -11,6 +11,9 @@
 		FBF5FDC31CBE443100AACEB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF5FDC21CBE443100AACEB8 /* ViewController.swift */; };
 		FBF5FDC61CBE443100AACEB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF5FDC41CBE443100AACEB8 /* Main.storyboard */; };
 		FBF5FDC81CBE443100AACEB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF5FDC71CBE443100AACEB8 /* Assets.xcassets */; };
+		FBF5FDD01CBE474E00AACEB8 /* Application.js in Resources */ = {isa = PBXBuildFile; fileRef = FBF5FDCF1CBE474E00AACEB8 /* Application.js */; };
+		FBF5FDD51CBE47D800AACEB8 /* images in Resources */ = {isa = PBXBuildFile; fileRef = FBF5FDD41CBE47D800AACEB8 /* images */; };
+		FBF5FDD71CBE4E7100AACEB8 /* JavascriptTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF5FDD61CBE4E7100AACEB8 /* JavascriptTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		FBF5FDC51CBE443100AACEB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBF5FDC71CBE443100AACEB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBF5FDC91CBE443100AACEB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF5FDCF1CBE474E00AACEB8 /* Application.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Application.js; sourceTree = "<group>"; };
+		FBF5FDD41CBE47D800AACEB8 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		FBF5FDD61CBE4E7100AACEB8 /* JavascriptTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavascriptTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +60,11 @@
 			children = (
 				FBF5FDC01CBE443100AACEB8 /* AppDelegate.swift */,
 				FBF5FDC21CBE443100AACEB8 /* ViewController.swift */,
+				FBF5FDCF1CBE474E00AACEB8 /* Application.js */,
 				FBF5FDC41CBE443100AACEB8 /* Main.storyboard */,
+				FBF5FDD61CBE4E7100AACEB8 /* JavascriptTools.swift */,
 				FBF5FDC71CBE443100AACEB8 /* Assets.xcassets */,
+				FBF5FDD41CBE47D800AACEB8 /* images */,
 				FBF5FDC91CBE443100AACEB8 /* Info.plist */,
 			);
 			path = Mooc;
@@ -93,6 +102,7 @@
 				TargetAttributes = {
 					FBF5FDBC1CBE443000AACEB8 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = DDXKLK2E74;
 					};
 				};
 			};
@@ -119,8 +129,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF5FDD51CBE47D800AACEB8 /* images in Resources */,
 				FBF5FDC81CBE443100AACEB8 /* Assets.xcassets in Resources */,
 				FBF5FDC61CBE443100AACEB8 /* Main.storyboard in Resources */,
+				FBF5FDD01CBE474E00AACEB8 /* Application.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +145,7 @@
 			files = (
 				FBF5FDC31CBE443100AACEB8 /* ViewController.swift in Sources */,
 				FBF5FDC11CBE443100AACEB8 /* AppDelegate.swift in Sources */,
+				FBF5FDD71CBE4E7100AACEB8 /* JavascriptTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,10 +251,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Mooc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sjw.Mooc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -250,10 +265,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Mooc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sjw.Mooc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
